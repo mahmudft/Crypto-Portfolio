@@ -1,0 +1,22 @@
+<table class="table table-dark table-borderless">
+  <thead>
+  <tr>
+    <th title="Rank">#Rank</th>
+    <th title="Name">Name</th>
+    <th title="Symbol">Symbol</th>
+    <th title="Price">Price</th>
+    <th title="Market Cap">Market Cap</th>
+    <th title="Changed(24hours)">Changed(24hours)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr <% for x in @array_data %>>
+    <td><%= x['rank'] %></td>
+    <td><%= x["id"].capitalize %></td>
+    <td><%= x["symbol"] %></td>
+    <td><%= x["priceUsd"].to_f.ceil(3) %></td>
+    <td><%= x["marketCapUsd"].to_f.ceil(3) %></td>
+    <td><%= x["changePercent24Hr"].to_f.ceil(2) %></td>
+  </tr <% end %>>
+  </tbody>
+</table>
